@@ -3,7 +3,7 @@ package com.geekster.StockApp.service;
 import com.geekster.StockApp.model.Stock;
 import com.geekster.StockApp.model.StockType;
 import com.geekster.StockApp.repository.IStockRepo;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
