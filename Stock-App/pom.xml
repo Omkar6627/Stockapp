@@ -14,7 +14,7 @@
 	<name>Stock-App</name>
 	<description>stock app - sql-db-swagger-jpa-hibernate</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 	
