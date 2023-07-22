@@ -18,6 +18,6 @@ public interface IStockRepo extends CrudRepository<Stock,Long> {
 
     @Modifying
       @Transactional
-     @Query(value = "UPDATE STOCK SET STOCK_PRICE = (STOCK_PRICE + STOCK_PRICE*(:hike)) WHERE STOCK_TYPE = :type" ,nativeQuery = true)
+     @Query(value = "UPDATE stock SET STOCK_PRICE = (STOCK_PRICE + STOCK_PRICE*(:hike)) WHERE STOCK_TYPE = :type" ,nativeQuery = true)
     void updateStocksByType(String type, Float hike);
 }
