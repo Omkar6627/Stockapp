@@ -38,7 +38,7 @@ public class StockService {
         return stockRepo.findByOrderByStockBirthTimeStamp();
     }
 
-    @Transactional
+   
     public void updateStocksByType(StockType type, Float hike) {
          stockRepo.updateStocksByType(type.name(),hike);
     }
