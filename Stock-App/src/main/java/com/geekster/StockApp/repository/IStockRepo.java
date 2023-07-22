@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public interface IStockRepo extends CrudRepository<Stock,Long> {
     List<Stock> findByOrderByStockBirthTimeStamp();
 
     @Modifying
-  @Query(value = "UPDATE STOCK SET STOCK_PRICE = (STOCK_PRICE + STOCK_PRICE * @hike) WHERE STOCK_TYPE = @type", nativeQuery = true)
+      @Transactional
+     @Query(value = "UPDATE STOCK SET STOCK_PRICE = (STOCK_PRICE + STOCK_PRICE*(:hike)) WHERE STOCK_TYPE = :type" ,nativeQuery = true)
     void updateStocksByType(String type, Float hike);
 }
