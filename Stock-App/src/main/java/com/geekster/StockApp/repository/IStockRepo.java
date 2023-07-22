@@ -16,6 +16,6 @@ public interface IStockRepo extends CrudRepository<Stock,Long> {
     List<Stock> findByOrderByStockBirthTimeStamp();
 
     @Modifying
-  @Query(value = "UPDATE STOCK SET STOCK_PRICE = (STOCK_PRICE + STOCK_PRICE*(:hike)) WHERE STOCK_TYPE = :type" ,nativeQuery = true)
+  @Query(value = "UPDATE STOCK SET STOCK_PRICE = (STOCK_PRICE + STOCK_PRICE * @hike) WHERE STOCK_TYPE = @type", nativeQuery = true)
     void updateStocksByType(String type, Float hike);
 }
